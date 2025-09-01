@@ -2,7 +2,6 @@ package com.example.Avaliacao_SubmissaoTrabalhos.Model;
 
 
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "Usuário")
@@ -11,22 +10,63 @@ public class Usuário {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NonNull
+    @Column(nullable = false)
     private String nome;
 
-    @NonNull
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @NonNull
+    @Column(nullable = false)
     private String senha;
 
-    private
 
-    Usuário(String nome, String email, String senha) {
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoUsuario tipoUsuario;
+
+    public Usuário() {
+    }
+
+    public Usuário(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
-        if(senha == null){
-            this.senha = "default";
-        }
+        this.senha = senha;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
 }
