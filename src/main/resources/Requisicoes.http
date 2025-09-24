@@ -1,0 +1,33 @@
+###
+POST http://localhost:8080/api/alunos/CadastrarAluno
+//cadastrar um novo aluno
+Content-Type: application/json
+
+{
+  "id": 0,
+  "nome": "xupis",
+  "matricula": "2424241"
+}
+
+###
+//listar todos os alunos
+GET http://localhost:8080/api/alunos/ListarAlunos
+
+###
+POST http://localhost:8080/api/orientador/CadastrarOrientador
+//cadastrar um novo orientador
+Content-Type: application/json
+
+{
+  "id": 0,
+  "nome": "Fred",
+  "email": "FredUfc@gmail.com",
+  "siape": "7896345"
+}
+
+###
+//listar todos os orientadores
+GET http://localhost:8080/api/orientador/ListarOrientadores
+
+###
+GET http://localhost:8080/api/orientador/BuscarOrientadorPorId/{{id}}
