@@ -5,13 +5,13 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "Servidor")
 public class Servidor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
+    @Id
+    @Column(unique = true)
+    private String siape;
     private String nome;
     private String email;
-    private String siape;
+
 
     public  Servidor() {
     }
@@ -39,7 +39,4 @@ public class Servidor {
         this.siape = siape;
     }
 
-    public long getId() {
-        return id;
-    }
 }
