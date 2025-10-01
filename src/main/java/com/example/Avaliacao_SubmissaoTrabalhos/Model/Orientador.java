@@ -7,13 +7,12 @@ import jakarta.persistence.*;
 @Table(name = "Orientador")
 public class Orientador {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
-    private String nome;
+    @Id
+    @Column(unique = true)
     private String siape;
     private String email;
+    private String nome;
 
     public Orientador() {
 
@@ -23,10 +22,6 @@ public class Orientador {
         setNome(nome);
         setSiape(siape);
         this.email = email;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public void setNome(String nome) {

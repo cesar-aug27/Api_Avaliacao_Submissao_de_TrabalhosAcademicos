@@ -5,12 +5,10 @@ import jakarta.persistence.*;
 @Table(name = "Aluno")
 public class Aluno {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    private String nome;
+    @Id()
+    @Column(unique = true)
     private String matricula;
+    private String nome;
     private String email;
     public Aluno() {
     }
@@ -19,9 +17,7 @@ public class Aluno {
         this.matricula = matricula;
         this.email = email;
     }
-    public long getId() {
-        return id;
-    }
+
 
     public String getMatricula() {
 

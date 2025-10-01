@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "nome": "xupis",
-  "matricula": "2424241"
+  "nome": "duda",
+  "matricula": "1919191"
 }
 
 ###
@@ -30,4 +30,4 @@ Content-Type: application/json
 GET http://localhost:8080/api/orientador/ListarOrientadores
 
 ###
-GET http://localhost:8080/api/orientador/BuscarOrientadorPorId/{{id}}
+GET http://localhost:8080/api/orientador/BuscarOrientadorPorId/13
